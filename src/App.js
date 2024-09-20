@@ -10,7 +10,7 @@ const App = () => {
 
   // Fetch services from the API
   useEffect(() => {
-    fetch('http://localhost:5000/services')
+    fetch('/api/services')
       .then((response) => response.json())
       .then((data) => setServices(data))
       .catch((error) => console.error('Error fetching services:', error));
@@ -18,7 +18,7 @@ const App = () => {
 
   // Add a new service
   const addService = (service) => {
-    fetch('http://localhost:5000/services', {
+    fetch('/api/services', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(service),
