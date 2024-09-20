@@ -68,7 +68,7 @@ const App = () => {
   
   // Delete a service
   const deleteService = (id) => {
-    fetch(`/api/services/${id}`, {
+    fetch(`services/${id}`, {
       method: 'DELETE',
     })
       .then(() => {
