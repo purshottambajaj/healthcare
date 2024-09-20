@@ -10,7 +10,7 @@ const App = () => {
 
   // Fetch services from the API
   useEffect(() => {
-    fetch('/api/services')
+    fetch('http://localhost:5000/services')
       .then((response) => response.json())
       .then((data) => setServices(data))
       .catch((error) => console.error('Error fetching services:', error));
@@ -18,7 +18,7 @@ const App = () => {
 
   // Add a new service
   const addService = (service) => {
-    fetch('/api/services', {
+    fetch('http://localhost:5000/services', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(service),
@@ -32,7 +32,7 @@ const App = () => {
 
   // Update an existing service
   const updateService = (service) => {
-    fetch(`/api/services/${editIndex}`, {
+    fetch(`http://localhost:5000/services/${editIndex}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(service),
@@ -68,7 +68,7 @@ const App = () => {
   
   // Delete a service
   const deleteService = (id) => {
-    fetch(`services/${id}`, {
+    fetch(`http://localhost:5000/services/${id}`, {
       method: 'DELETE',
     })
       .then(() => {
